@@ -1,0 +1,13 @@
+{% assign embed-count = embed-count | plus: 1 %}
+{% assign elem-id = "gist" | append: embed-count %}
+{% assign lines = "" %}
+{% assign segments = include.lines | split: "," %}
+{% for range in segments %}
+    {% assign indices = range | split: "-" %}
+    {% assign s = indices | first | minus: 1 %}
+    {% assign e = indices | last %}
+    {% assign lines = lines | append: "[" | append: s | append: "," | append: e | append: "]," %}
+{% endfor %}
+<div id="{{ elem-id }}">
+    <script>embed_gist('{{ include.id | default: page.gist-id }}', '{{ include.file }}', [{{ lines }}], '{{ elem-id }}');</script>
+</div>

@@ -1,0 +1,88 @@
+---
+---
+
+$site-width: 44em
+$section-spacing: 3em
+$item-spacing: 0.8em
+$corner-radius: 5px
+
+$color-1: royalblue
+$color-2: cornflowerblue
+$color-3: cornsilk
+$color-4: lightgray
+
+#site-header
+    text-align: center
+
+#site-nav
+    display: flex
+    justify-content: space-around
+    font-size: larger
+    max-width: $site-width / 2
+    margin: auto
+    padding: 0
+    list-style-type: none
+
+#comment-section-header
+    display: flex
+    justify-content: space-between
+    align-items: baseline
+
+#site-footer
+    font-size: smaller
+
+.comment-header
+    display: flex
+    align-items: center
+
+.comment-header-text
+    margin-left: $item-spacing
+
+.avatar
+    border-radius: $corner-radius
+
+html
+    font: medium/1.5 Helvetica, sans-serif
+    -webkit-text-size-adjust: none
+
+.dim
+    color: gray
+
+body
+    max-width: $site-width
+    margin: auto
+    padding:
+        left: $item-spacing
+        right: $item-spacing
+
+main, section, article
+    margin-bottom: $section-spacing
+
+pre
+    padding: $item-spacing
+    border: thin solid $color-4
+        radius: $corner-radius
+    overflow: auto
+
+h1, h2, h3, h4, h5, h6
+    font-weight: normal
+
+a
+    text-decoration: none
+    color: $color-1
+    &:hover
+        color: $color-2
+
+.dim-link
+    a:not(:hover)
+        color: black
+
+.dim-link-hover
+    a:hover
+        color: gray
+
+code
+    font: smaller Menlo, monospace
+    &:not(pre &)
+        padding: 0.1em 0.2em
+        background-color: $color-3

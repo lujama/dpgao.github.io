@@ -1,0 +1,12 @@
+<header class="post-header dim-link">
+    <h2>
+        <a href="{{ page.url | relative_url }}">
+            {{ page.title | smartify }}
+        </a>
+    </h2>
+    <p class="dim">
+        <time datetime="{{ page.date | date: site.data.time.machine.ymd }}">
+            {{ page.date | date: site.data.time.human.ymd }}
+        </time>
+    </p>
+</header>

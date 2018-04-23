@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<article>
+
+    {% include heading.html %}
+
+    {{ content }}
+
+    {% if page.gist-id %}
+    <p>
+        <em>All code above is available in this <a href="{{ site.data.meta.gist.baseurl }}/{{ page.gist-id }}">gist</a>.</em>
+    </p>
+    {% endif %}
+
+</article>
+
+{% if page.comment-id %}
+<section id="comment-section">
+
+    <header id="comment-section-header">
+        <h2>Comments</h2>
+        <a href="{{ site.github.issues_url }}/{{ page.comment-id }}">+ new comment</a>
+    </header>
+
+    <script src="{{ "/assets/comments.js" | relative_url }}"></script>
+    <script>embed_comments({{ page.comment-id }});</script>
+
+</section>
+{% endif %}
